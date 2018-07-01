@@ -63,31 +63,6 @@ public class SignUpActivity extends AppCompatActivity {
                 String email = mEmailView.getText().toString();
                 String password = mPasswordView.getText().toString();
 
-                boolean cancel = false;
-                View focusView = null;
-
-                // Check for a valid password, if the user entered one.
-                if (!TextUtils.isEmpty(password)) {
-                    mPasswordView.setError(getString(R.string.error_incorrect_password));
-                    focusView = mPasswordView;
-                    cancel = true;
-                }
-
-                // Check for a valid email address.
-                if (TextUtils.isEmpty(email)) {
-                    mEmailView.setError(getString(R.string.error_field_required));
-                    focusView = mEmailView;
-                    cancel = true;
-                }
-
-                if (cancel) {
-                    // There was an error; don't attempt login and focus the first
-                    // form field with an error.
-                    focusView.requestFocus();
-                } else {
-                    // Show a progress spinner, and kick off a background task to
-                    // perform the user login attempt.
-                    showProgress(true);
                     mAuth.createUserWithEmailAndPassword(email, password)
                             .addOnCompleteListener(SignUpActivity.this, new OnCompleteListener<AuthResult>() {
                                 @Override
