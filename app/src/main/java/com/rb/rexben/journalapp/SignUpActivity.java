@@ -62,6 +62,7 @@ public class SignUpActivity extends AppCompatActivity {
             public void onClick(View view) {
                 String email = mEmailView.getText().toString();
                 String password = mPasswordView.getText().toString();
+                    showProgress(true);
 
                     mAuth.createUserWithEmailAndPassword(email, password)
                             .addOnCompleteListener(SignUpActivity.this, new OnCompleteListener<AuthResult>() {
