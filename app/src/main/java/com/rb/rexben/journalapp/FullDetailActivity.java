@@ -13,12 +13,12 @@ import android.widget.TextView;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-public class DetailActivity extends AppCompatActivity {
+public class FullDetailActivity extends AppCompatActivity {
     public static final String ENTRY_ARGS = "entry_args";
     private static final String DATABASE_CONFIG = "Diary";
     private FirebaseDatabase db;
     DatabaseReference entryRef;
-    private DiaryEntry entries;
+    private EventEntry entries;
     TextView titleTextView;
     TextView detailTextView;
     TextView messageTextView;
@@ -29,7 +29,7 @@ public class DetailActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_detail);
+        setContentView(R.layout.activity_detail_full);
         db = FirebaseDatabase.getInstance();
         entries = getIntent().getParcelableExtra(ENTRY_ARGS);
         titleTextView = findViewById(R.id.title);
@@ -39,7 +39,7 @@ public class DetailActivity extends AppCompatActivity {
         setUpView(entries);
     }
 
-    void setUpView(DiaryEntry entry) {
+    void setUpView(EventEntry entry) {
         titleTextView.setText(entry.getTitle());
         detailTextView.setText(entry.getDetails());
         messageTextView.setText(entry.getSomeMessage());
@@ -48,8 +48,8 @@ public class DetailActivity extends AppCompatActivity {
         floatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(DetailActivity.this, NewEntry.class);
-                intent.putExtra(NewEntry.ENTRY_ARGS, entries);
+                Intent intent = new Intent(FullDetailActivity.this, AddNewEvent.class);
+                intent.putExtra(AddNewEvent.ENTRY_ARGS, entries);
                 startActivity(intent);
             }
         });

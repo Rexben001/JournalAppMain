@@ -1,35 +1,27 @@
 {
   "project_info": {
-    "project_number": "448154636799",
-    "firebase_url": "https://journalapp-rexben.firebaseio.com",
-    "project_id": "journalapp-rexben",
-    "storage_bucket": "journalapp-rexben.appspot.com"
+    "project_number": "249161302530",
+    "firebase_url": "https://rexy-ef8fe.firebaseio.com",
+    "project_id": "rexy-ef8fe",
+    "storage_bucket": "rexy-ef8fe.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:448154636799:android:515cdf925851069a",
+        "mobilesdk_app_id": "1:249161302530:android:515cdf925851069a",
         "android_client_info": {
           "package_name": "com.rb.rexben.journalapp"
         }
       },
       "oauth_client": [
         {
-          "client_id": "448154636799-j320i99k8u6c4bn3bk12ids9var29l01.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.rb.rexben.journalapp",
-            "certificate_hash": "831b21810c013a9158f5f1bc271368082daa1072"
-          }
-        },
-        {
-          "client_id": "448154636799-2t2gs1j7tkoj9u21q6t6h6md6cgbjcdc.apps.googleusercontent.com",
+          "client_id": "249161302530-jscn0m0qeqi2d8p681nmm3mqqnd98d0k.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBrUgDFuep4yMxjBAucZF7RPenRXomiSSI"
+          "current_key": "AIzaSyDM0sfOCp5CAVHUJkQCN72vgt2NQQbMnUY"
         }
       ],
       "services": {
@@ -37,13 +29,8 @@
           "status": 1
         },
         "appinvite_service": {
-          "status": 2,
-          "other_platform_oauth_client": [
-            {
-              "client_id": "448154636799-2t2gs1j7tkoj9u21q6t6h6md6cgbjcdc.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
+          "status": 1,
+          "other_platform_oauth_client": []
         },
         "ads_service": {
           "status": 2

@@ -3,9 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="@dimen/activity_vertical_margin"
     android:layout_gravity="center"
-    tools:context=".LoginActivity">
+    android:layout_margin="@dimen/activity_vertical_margin"
+    android:background="@color/transparent_black"
+    tools:context=".SignInActivity">
 
     <!-- Login progress -->
     <ProgressBar
@@ -71,31 +72,31 @@
 
 
             <TextView
-                android:text="@string/or_text"
-                android:textSize="22sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_margin="@dimen/activity_vertical_margin"
+                android:text="@string/or_text"
                 android:textColor="@color/colorAccent"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:textSize="22sp" />
 
 
             <com.google.android.gms.common.SignInButton
                 android:id="@+id/sign_in_button"
-                android:layout_gravity="center"
-                android:layout_margin="@dimen/activity_vertical_margin"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="@dimen/activity_vertical_margin" />
 
             <TextView
                 android:id="@+id/switch_auth"
-                android:textAppearance="@android:style/TextAppearance.Holo.Medium.Inverse"
-                android:gravity="center"
-                android:textColor="@android:color/holo_red_dark"
-                android:text="@string/action_switch_auth"
-                android:onClick="gotoSignUp"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:onClick="gotoSignUp"
+                android:text="@string/action_switch_auth"
+                android:textAppearance="@android:style/TextAppearance.Holo.Medium.Inverse"
+                android:textColor="@android:color/holo_red_dark" />
 
         </LinearLayout>
 

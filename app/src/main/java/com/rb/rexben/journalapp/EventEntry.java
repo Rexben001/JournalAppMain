@@ -3,31 +3,31 @@ package com.rb.rexben.journalapp;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-public class DiaryEntry implements Parcelable {
+public class EventEntry implements Parcelable {
 
 
-    protected DiaryEntry(Parcel in) {
+    public static final Creator<EventEntry> CREATOR = new Creator<EventEntry>() {
+        @Override
+        public EventEntry createFromParcel(Parcel in) {
+            return new EventEntry(in);
+        }
+
+        @Override
+        public EventEntry[] newArray(int size) {
+            return new EventEntry[size];
+        }
+    };
+
+    protected EventEntry(Parcel in) {
         title = in.readString();
         details = in.readString();
         someMessage = in.readString();
         id = in.readString();
     }
 
-    public DiaryEntry(){
+    public EventEntry() {
 
     }
-
-    public static final Creator<DiaryEntry> CREATOR = new Creator<DiaryEntry>() {
-        @Override
-        public DiaryEntry createFromParcel(Parcel in) {
-            return new DiaryEntry(in);
-        }
-
-        @Override
-        public DiaryEntry[] newArray(int size) {
-            return new DiaryEntry[size];
-        }
-    };
 
     String title;
     String details;

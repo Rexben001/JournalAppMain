@@ -10,10 +10,10 @@ import java.util.List;
 
 public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ItemViewHolder> {
 
-    private List<DiaryEntry> entries;
+    private List<EventEntry> entries;
     private AdapterClickListener clickListener;
 
-    public CustomAdapter(List<DiaryEntry> entries,
+    public CustomAdapter(List<EventEntry> entries,
                          AdapterClickListener clickListener) {
         this.clickListener = clickListener;
         replaceData(entries);
@@ -40,13 +40,13 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ItemViewHo
         return entries.size();
     }
 
-    public void replaceData(List<DiaryEntry> entries) {
+    public void replaceData(List<EventEntry> entries) {
         this.entries = entries;
         this.notifyDataSetChanged();
     }
 
     public interface AdapterClickListener {
-        void onEntryClicked(DiaryEntry entry);
+        void onEntryClicked(EventEntry entry);
     }
 
     class ItemViewHolder extends RecyclerView.ViewHolder {
@@ -62,7 +62,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ItemViewHo
             messageTextView = itemView.findViewById(R.id.message);
         }
 
-        void bind(final DiaryEntry entry, final int position) {
+        void bind(final EventEntry entry, final int position) {
             titleTextView.setText(entry.getTitle());
             detailTextView.setText(entry.getDetails());
             messageTextView.setText(entry.getSomeMessage());

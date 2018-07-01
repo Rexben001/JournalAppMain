@@ -14,7 +14,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 
-public class NewEntry extends AppCompatActivity {
+public class AddNewEvent extends AppCompatActivity {
 
     private static final String TAG = "Entry";
     FloatingActionButton floatingActionButton;
@@ -25,7 +25,7 @@ public class NewEntry extends AppCompatActivity {
     private static final String TIMESTAMP = "timeUpdate";
     public static final String ENTRY_ARGS = "entry_args";
     private FirebaseDatabase db;
-    private DiaryEntry entry;
+    private EventEntry entry;
     DatabaseReference entryRef;
     String getID;
     EditText title;
@@ -56,22 +56,22 @@ public class NewEntry extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(update){
-                    updateEntry();
+                    updateEvent();
                 }else {
-                    addEntry();
+                    addEvent();
                 }
             }
         });
     }
 
-    private void addEntry() {
+    private void addEvent() {
         getID = entryRef.child(DATABASE_CONFIG).push().getKey();
         entry = getData();
         entryRef.child(getID).setValue(entry).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
             public void onSuccess(Void aVoid) {
                 Log.d(TAG, "update successful");
-                Toast.makeText(NewEntry.this, "Successfully ",
+                Toast.makeText(AddNewEvent.this, "Successfully ",
                         Toast.LENGTH_SHORT).show();
             }
 
@@ -79,8 +79,8 @@ public class NewEntry extends AppCompatActivity {
         finish();
     }
 
-    private DiaryEntry getData() {
-        entry = new DiaryEntry();
+    private EventEntry getData() {
+        entry = new EventEntry();
         entry.setTitle(title.getText().toString());
         entry.setDetails(details.getText().toString());
         entry.setSomeMessage(message.getText().toString());
@@ -89,10 +89,10 @@ public class NewEntry extends AppCompatActivity {
     }
 
 
-    private void updateEntry(){
+    private void updateEvent() {
         entry = getData();
         entryRef.child(entry.getId()).setValue(entry);
-        Intent intent = new Intent(NewEntry.this, MainActivity.class);
+        Intent intent = new Intent(AddNewEvent.this, MainActivity.class);
         startActivity(intent);
         finish();
     }
